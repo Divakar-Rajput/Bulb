@@ -1,0 +1,159 @@
+html,
+body{
+margin: 0;
+padding: 0;
+height: 100%;
+}
+.bg_img{
+    width: 100%;
+    height: 100%;
+    background: url(img1.jpg);
+    background-size: 100% 100%;
+    filter: blur(4px);
+    background-repeat: no-repeat;
+    animation: change 30s infinite ease-in-out;
+    z-index: -1;
+}
+@keyframes change{
+    0%{
+        background: url(img2.jpg);
+        background-size: 100% 100%;
+    }
+    40%{
+        background: url(img3.jpg);
+        background-size: 100% 100%;
+    }
+    80%{
+        background: url(img4.jpg);
+        background-size: 100% 100%;
+    }
+    100%{
+        background: url(img5.jpg);
+        background-size: 100% 100%;
+    }
+}
+.container{
+    position: absolute;
+   width: 40%;
+   height: 70%;
+   top: 50%;
+   left: 50%;
+   padding: 10px;
+   transform: translate(-50%,-50%);
+   background: transparent;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0px 0px 10px 2px black;
+   border-radius: 10px;
+   transition: .5s;
+}
+.container .bulb_area{
+    width: 95%;
+    height: 95%;
+    background: #333;
+    box-shadow: inset 0px 0px 10px 2px rgb(0, 0, 0);
+    display: flex;
+   flex-direction: column;
+   border-radius: 10px;
+   align-items: center;
+   justify-content: center;
+}
+.container .bulb_area img{
+    width: 60%;
+   
+}
+.container .bulb_area .toggle-label{
+    position: relative;
+    display: block;
+    width: 15%;
+    height: 5%;
+    border: 1px solid #808080;
+}
+.container .bulb_area .toggle-label input[type=checkbox] { 
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .container .bulb_area .toggle-label input[type=checkbox]+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ed1c24;
+    transition: background 150ms linear;  
+  }
+  .container .bulb_area .toggle-label input[type=checkbox]:checked+.back {
+    background: #00a651; /*green*/
+  }
+  .toggle-label input[type=checkbox]+.back .toggle {
+    display: block;
+    position: absolute;
+    content: ' ';
+    background: #f8f8f8;
+    width: 50%; 
+    height: 100%;
+    transition: margin 150ms linear;
+    border: 1px solid #808080;
+    border-radius: 0;
+  }
+  /* .container .bulb_area .toggle-label input[type=checkbox]:checked+.back .toggle {
+    margin-left: 50%;
+  } */
+  .container .bulb_area .toggle-label .label {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    color: #f8f8f8;
+    text-align: center;
+    font-size: 100%;
+  }
+  .container .bulb_area .toggle-label .label.on { left: 0px; }
+  .container .bulb_area .toggle-label .label.off { right: 0px; }
+  
+  .container .bulb_area .toggle-label input[type=checkbox]:checked+.back .label.on {
+    color: #ffffff;
+  }
+  .container .bulb_area  .toggle-label input[type=checkbox]+.back .label.off {
+    color: #fff;
+  }
+  .container .bulb_area .toggle-label input[type=checkbox]:checked+.back .label.off {
+    color: #f50505;
+    display: none;
+  }
+@media (max-width:1100px){
+  .container{
+    width: 60%;
+  }
+  .container .bulb_area .toggle-label .label {
+    font-size: 80%;
+  }
+}
+@media (max-width:900px){
+  .container{
+    width: 70%;
+  }
+  .container .bulb_area .toggle-label .label {
+    font-size: 60%;
+  }
+}
+@media (max-width:700px){
+  .container{
+    width: 80%;
+  }
+  .container .bulb_area .toggle-label .label {
+    font-size: 50%;
+  }
+}
+@media (max-width:500px){
+  .container{
+    width: 90%;
+  }
+  .container .bulb_area .toggle-label .label {
+    font-size: 40%;
+  }
+}
