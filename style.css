@@ -122,8 +122,7 @@ height: 100%;
     color: #fff;
   }
   .container .bulb_area .toggle-label input[type=checkbox]:checked+.back .label.off {
-    color: #f50505;
-    display: none;
+    color:#f8f8f8; 
   }
 @media (max-width:1100px){
   .container{
